@@ -281,7 +281,7 @@ ifeq ($(filter $(UM_5_15_FAMILY) $(UM_6_1_FAMILY),$(TARGET_BOARD_PLATFORM)),)
 endif
 
 # Use full QTI gralloc struct for GKI 2.0 targets
-ifneq ($(filter $(UM_5_10_FAMILY) $(UM_5_15_FAMILY) $(UM_6_1_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter $(UM_5_10_FAMILY) $(UM_5_15_FAMILY) $(UM_5_15_BENGAL_FAMILY) $(UM_6_1_FAMILY),$(TARGET_BOARD_PLATFORM)),)
     TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE ?= true
     TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE ?= true
 else
@@ -355,7 +355,7 @@ ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
         vendor/qcom/opensource/commonsys/display \
         vendor/qcom/opensource/commonsys-intf/display
 
-    ifeq ($(filter $(UM_5_10_FAMILY) $(UM_5_15_FAMILY) $(UM_6_1_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+    ifeq ($(filter $(UM_5_10_FAMILY) $(UM_5_15_FAMILY) $(UM_6_1_FAMILY) $(UM_5_15_BENGAL_FAMILY),$(TARGET_BOARD_PLATFORM)),)
         PRODUCT_SOONG_NAMESPACES += \
             vendor/qcom/opensource/display
     endif
